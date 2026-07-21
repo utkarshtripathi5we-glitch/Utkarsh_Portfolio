@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Utkarsh Tripathi — Account Strategy & Digital Marketing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#120A1E;
+    --surface:#1D1330;
+    --surface-2:#28193F;
+    --ink:#F6F4FA;
+    --muted:#A79DBE;
+    --line:#3C2C56;
+    --m-blue:#00E0FF;
+    --m-violet:#FF2EC4;
+    --m-red:#FFD400;
+    --fit:#FF5D3A;
+    --canon:#7CFF6B;
+    --stripe: linear-gradient(90deg, var(--m-violet) 0%, var(--m-blue) 55%, var(--m-red) 100%);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;line-height:1.55;overflow-x:hidden;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 32px;}
+  img,video{max-width:100%;display:block;}
+
+  .stripe{height:4px;background:var(--stripe);}
+
+  nav{position:sticky;top:0;z-index:50;background:rgba(10,12,16,0.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:66px;}
+  .brand{font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:0.03em;}
+  .navlinks{display:flex;gap:26px;font-size:12.5px;font-family:'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:0.05em;color:var(--muted);}
+  .navlinks a:hover{color:var(--m-blue);}
+  @media(max-width:680px){.navlinks{display:none;}}
+
+  header.hero{padding:90px 0 40px;position:relative;}
+  .eyebrow{font-family:'JetBrains Mono',monospace;font-size:12.5px;letter-spacing:0.08em;text-transform:uppercase;color:var(--m-blue);margin-bottom:20px;display:flex;align-items:center;gap:10px;}
+  .eyebrow::before{content:"";width:26px;height:2px;background:var(--stripe);display:inline-block;}
+  h1{font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:clamp(46px,7.2vw,84px);line-height:0.98;letter-spacing:0.005em;max-width:880px;}
+  h1 .grad{background:var(--stripe);-webkit-background-clip:text;background-clip:text;color:transparent;}
+  .hero-sub{margin-top:24px;max-width:580px;font-size:17px;color:var(--muted);}
+  .hero-cta{display:flex;gap:14px;margin-top:34px;flex-wrap:wrap;}
+  .btn{font-family:'JetBrains Mono',monospace;font-size:12.5px;letter-spacing:0.03em;padding:14px 24px;border-radius:3px;transition:all .2s ease;border:1px solid var(--line);}
+  .btn.solid{background:var(--stripe);color:#fff;border:none;}
+  .btn.solid:hover{filter:brightness(1.15);transform:translateY(-1px);}
+  .btn.ghost{color:var(--ink);}
+  .btn.ghost:hover{border-color:var(--m-blue);color:var(--m-blue);}
+
+  .reel{margin-top:60px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:18px 0;overflow:hidden;white-space:nowrap;}
+  .reel-track{display:inline-flex;gap:52px;animation:scroll 24s linear infinite;}
+  .reel span{font-family:'Bebas Neue',sans-serif;font-size:22px;color:var(--muted);letter-spacing:0.02em;flex-shrink:0;}
+  @keyframes scroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+
+  section.stats{padding:64px 0;}
+  .stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:6px;overflow:hidden;}
+  .stat{background:var(--surface);padding:30px 22px;position:relative;}
+  .stat::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:var(--stripe);opacity:0;transition:opacity .2s;}
+  .stat:hover::before{opacity:1;}
+  .stat .num{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:34px;color:var(--ink);}
+  .stat .num .u{font-size:18px;color:var(--m-blue);}
+  .stat .label{margin-top:8px;font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--muted);text-transform:uppercase;letter-spacing:0.04em;}
+  @media(max-width:720px){.stat-grid{grid-template-columns:repeat(2,1fr);}}
+
+  .section-head{display:flex;align-items:baseline;gap:14px;margin-bottom:12px;}
+  .section-tag{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--m-blue);}
+  .section-title{font-family:'Bebas Neue',sans-serif;font-size:38px;letter-spacing:0.02em;}
+  .section-desc{color:var(--muted);font-size:14.5px;max-width:560px;margin-bottom:40px;}
+  section{padding:70px 0;}
+  section.alt{background:var(--surface);}
+
+  .brand-label{display:flex;align-items:center;gap:10px;margin:52px 0 20px;}
+  .brand-label:first-of-type{margin-top:0;}
+  .brand-dot{width:9px;height:9px;border-radius:50%;}
+  .brand-label span{font-family:'JetBrains Mono',monospace;font-size:12.5px;text-transform:uppercase;letter-spacing:0.06em;color:var(--muted);}
+
+  .case{background:var(--surface);border:1px solid var(--line);border-radius:8px;margin-bottom:24px;overflow:hidden;display:grid;grid-template-columns:1fr 1.15fr;transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;}
+  .case:hover{transform:translateY(-3px);box-shadow:0 16px 36px rgba(0,0,0,0.35);}
+  .case-media{background:#000;display:flex;align-items:center;justify-content:center;position:relative;min-height:260px;}
+  .case-media img, .case-media video{width:100%;height:100%;object-fit:cover;}
+  .case-body{padding:30px 32px;}
+  .case-tag{font-family:'JetBrains Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:0.04em;margin-bottom:10px;display:inline-block;padding:4px 10px;border-radius:20px;}
+  .case-body h3{font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:0.01em;margin-bottom:12px;line-height:1.08;}
+  .case-row{margin-bottom:10px;font-size:14px;}
+  .case-row b{font-family:'JetBrains Mono',monospace;font-size:10.5px;text-transform:uppercase;color:var(--muted);letter-spacing:0.04em;display:block;margin-bottom:2px;}
+  .case-row span{color:#D7DAE0;}
+  .stat-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;}
+  .chip{background:var(--surface-2);border:1px solid var(--line);border-radius:5px;padding:8px 12px;}
+  .chip .n{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:18px;}
+  .chip .l{font-family:'JetBrains Mono',monospace;font-size:9.5px;color:var(--muted);text-transform:uppercase;letter-spacing:0.03em;margin-top:2px;}
+  .case-link{display:inline-block;margin-top:16px;font-family:'JetBrains Mono',monospace;font-size:12px;border-bottom:1px solid currentColor;}
+  .note{font-size:12px;color:var(--muted);margin-top:12px;font-style:italic;}
+  @media(max-width:760px){.case{grid-template-columns:1fr;}.case-media{min-height:200px;}}
+
+  .bmw .case-tag{background:rgba(46,107,255,0.15);color:#8FB0FF;}
+  .bmw:hover{border-color:var(--m-blue);}
+  .bmw .chip .n{color:#8FB0FF;}
+  .fit .case-tag{background:rgba(255,62,127,0.15);color:#FF9FBE;}
+  .fit:hover{border-color:var(--fit);}
+  .fit .chip .n{color:#FF9FBE;}
+  .canon .case-tag{background:rgba(242,169,59,0.15);color:#F7C978;}
+  .canon:hover{border-color:var(--canon);}
+  .canon .chip .n{color:#F7C978;}
+
+  .growth-wrap{background:var(--surface);border:1px solid var(--line);border-radius:8px;overflow:hidden;}
+  .growth-video{background:#000;}
+  .growth-content{padding:32px;}
+  .growth-content h3{font-family:'Bebas Neue',sans-serif;font-size:28px;margin-bottom:10px;}
+  .mini-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:22px;}
+  .mini-stat{background:var(--surface-2);border:1px solid var(--line);border-radius:6px;padding:16px;text-align:center;}
+  .mini-stat .n{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:22px;color:var(--m-blue);}
+  .mini-stat .l{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--muted);margin-top:4px;text-transform:uppercase;}
+  @media(max-width:700px){.mini-stats{grid-template-columns:1fr;}}
+  .campaign-tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px;}
+  .campaign-tags .t{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted);border:1px solid var(--line);padding:5px 10px;border-radius:20px;}
+
+  .skill-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
+  .skill-col h4{font-family:'JetBrains Mono',monospace;font-size:11.5px;text-transform:uppercase;letter-spacing:0.05em;color:var(--m-blue);margin-bottom:14px;}
+  .skill-col ul{list-style:none;}
+  .skill-col li{padding:9px 0;border-bottom:1px solid var(--line);font-size:14.5px;color:#D7DAE0;}
+  @media(max-width:700px){.skill-cols{grid-template-columns:1fr;}}
+
+  .tl-item{display:grid;grid-template-columns:140px 1fr;gap:22px;padding:26px 0;border-top:1px solid var(--line);}
+  .tl-item:last-child{border-bottom:1px solid var(--line);}
+  .tl-date{font-family:'JetBrains Mono',monospace;font-size:12.5px;color:var(--muted);}
+  .tl-role{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:0.01em;}
+  .tl-org{color:var(--muted);font-size:13.5px;margin-top:2px;}
+  .tl-desc{margin-top:10px;font-size:14px;color:#B7BCC6;max-width:620px;}
+  @media(max-width:600px){.tl-item{grid-template-columns:1fr;}}
+
+  .award-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:6px;overflow:hidden;}
+  .award{background:var(--surface);padding:22px 26px;font-size:14px;color:var(--muted);}
+  .award b{display:block;font-family:'Bebas Neue',sans-serif;font-size:19px;color:var(--ink);letter-spacing:0.01em;margin-bottom:4px;}
+  @media(max-width:600px){.award-grid{grid-template-columns:1fr;}}
+
+  footer{padding:80px 0 60px;text-align:center;}
+  footer h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(32px,5vw,52px);letter-spacing:0.01em;margin-bottom:18px;}
+  .contact-row{display:flex;gap:22px;justify-content:center;flex-wrap:wrap;margin-top:26px;font-family:'JetBrains Mono',monospace;font-size:13px;}
+  .contact-row a{border-bottom:1px solid var(--line);padding-bottom:2px;}
+  .contact-row a:hover{color:var(--m-blue);border-color:var(--m-blue);}
+  .foot-note{margin-top:56px;font-size:11.5px;color:var(--muted);font-family:'JetBrains Mono',monospace;letter-spacing:0.02em;}
+
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease, transform .6s ease;}
+  .reveal.in{opacity:1;transform:translateY(0);}
+  ::selection{background:var(--m-blue);color:#fff;}
+</style>
+</head>
+<body>
+
+<div class="stripe"></div>
+<nav>
+  <div class="wrap">
+    <div class="brand">UTKARSH TRIPATHI</div>
+    <div class="navlinks">
+      <a href="#work">Work</a>
+      <a href="#growth">Growth Reel</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Account Strategy · Digital Marketing</div>
+    <h1>I turn brand briefs into <span class="grad">campaigns that win awards and revenue.</span></h1>
+    <p class="hero-sub">6+ years leading integrated marketing for BMW Motorrad, Canon, Anytime Fitness, and Schwarzkopf — across strategy, content, influencer, SEO, and paid media. Rs. 50+ Cr in account revenue generated, 20M+ people reached across campaigns.</p>
+    <div class="hero-cta">
+      <a class="btn solid" href="#work">View case studies</a>
+      <a class="btn ghost" href="mailto:utkarshtripathi5.we@gmail.com">Get in touch</a>
+    </div>
+  </div>
+  <div class="reel">
+    <div class="reel-track">
+      <span>BMW MOTORRAD</span><span>CANON</span><span>ANYTIME FITNESS</span><span>SCHWARZKOPF</span><span>FUJIFILM</span><span>MOOVE</span><span>LUCKNOW SUPER GIANTS</span><span>AAJ TAK / INDIA TODAY</span>
+      <span>BMW MOTORRAD</span><span>CANON</span><span>ANYTIME FITNESS</span><span>SCHWARZKOPF</span><span>FUJIFILM</span><span>MOOVE</span><span>LUCKNOW SUPER GIANTS</span><span>AAJ TAK / INDIA TODAY</span>
+    </div>
+  </div>
+</header>
+
+<section class="stats reveal">
+  <div class="wrap">
+    <div class="stat-grid">
+      <div class="stat"><div class="num">50<span class="u">Cr+</span></div><div class="label">Revenue generated</div></div>
+      <div class="stat"><div class="num">20<span class="u">M+</span></div><div class="label">People reached (campaigns)</div></div>
+      <div class="stat"><div class="num">6</div><div class="label">Live brand accounts</div></div>
+      <div class="stat"><div class="num">4</div><div class="label">Industry awards won</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="wrap">
+    <div class="section-head reveal"><span class="section-tag">01</span><span class="section-title">Case Studies</span></div>
+    <p class="section-desc reveal">Every campaign below follows the same route: the Ignition (challenge), the Approach, the Execution, and the Destination (results) — with real numbers pulled straight from platform reporting.</p>
+
+    <div class="brand-label reveal"><div class="brand-dot" style="background:var(--m-blue)"></div><span>BMW Motorrad</span></div>
+
+    <div class="case bmw reveal">
+      <div class="case-media"><img src="assets/bmw-womens-day.jpg" alt="Rider is Neutral campaign"></div>
+      <div class="case-body">
+        <span class="case-tag">Brand Campaign · Women's Day</span>
+        <h3>Rider Is Neutral</h3>
+        <div class="case-row"><b>Ignition</b><span>Riding is culturally coded as a "man's game," even though the word "rider" carries no gender. That bias sidelines thousands of women riders.</span></div>
+        <div class="case-row"><b>Approach</b><span>Ran a social experiment asking the audience to describe a "good rider" — then confronted them with their own gendered assumptions.</span></div>
+        <div class="case-row"><b>Execution</b><span>Featured real stories from 11 women riders on the bias they've faced, reframing gender as irrelevant to riding ability.</span></div>
+        <div class="stat-chips">
+          <div class="chip"><div class="n">487K+</div><div class="l">Reach</div></div>
+          <div class="chip"><div class="n">54K+</div><div class="l">Engagement</div></div>
+          <div class="chip"><div class="n">11.20%</div><div class="l">Engagement Rate</div></div>
+          <div class="chip"><div class="n">+50%</div><div class="l">Follower Growth</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="case bmw reveal">
+      <div class="case-media"><img src="assets/bmw-april-fool.jpg" alt="A Fool, Indeed campaign"></div>
+      <div class="case-body">
+        <span class="case-tag">Brand Campaign · April Fools'</span>
+        <h3>A Fool, Indeed</h3>
+        <div class="case-row"><b>Ignition</b><span>Society calls anyone who defies convention a "fool" — the mad scientist, the crazy artist, the rider who chases sunsets instead of comfort.</span></div>
+        <div class="case-row"><b>Approach</b><span>Flipped the usual April Fools' prank format. Instead of a fake product, reframed "fool" as a badge of honour for BMW Motorrad riders.</span></div>
+        <div class="case-row"><b>Execution</b><span>A three-part visual series — facing the breeze over a hot bath, the desert over a club, the wild over a stream — each closing on "a fool, indeed."</span></div>
+        <div class="stat-chips">
+          <div class="chip"><div class="n">26.4K+</div><div class="l">Reach</div></div>
+          <div class="chip"><div class="n">1.6K+</div><div class="l">Engagement</div></div>
+          <div class="chip"><div class="n">5.89%</div><div class="l">Engagement Rate</div></div>
+        </div>
+        <div class="note">Featured on Campaigns of the World and Ads of the World.</div>
+      </div>
+    </div>
+
+    <div class="case bmw reveal">
+      <div class="case-media"><video controls preload="metadata" poster="assets/bmw-road-safety.jpg"><source src="assets/bmw-road-safety.mp4" type="video/mp4"></video></div>
+      <div class="case-body">
+        <span class="case-tag">Brand Campaign · National Road Safety Week</span>
+        <h3>You Win When You Ride Safe</h3>
+        <div class="case-row"><b>Ignition</b><span>Classic racing video games shaped a generation — but many also glorified reckless riding, making "rash" riding feel fashionable.</span></div>
+        <div class="case-row"><b>Approach</b><span>Borrowed the exact look and feel of retro motorcycle racing games to deliver a safety message through nostalgia rather than lecture.</span></div>
+        <div class="case-row"><b>Execution</b><span>Pixel-art creatives — "There are no respawns in life," "Getting up won't be as easy as pressing a button" — placed near petrol pumps and high-traffic zones.</span></div>
+        <div class="stat-chips">
+          <div class="chip"><div class="n">14.9L+</div><div class="l">People Reached</div></div>
+          <div class="chip"><div class="n">11.6%</div><div class="l">Engagement Rate</div></div>
+          <div class="chip"><div class="n">1.73L+</div><div class="l">Total Engagement</div></div>
+          <div class="chip"><div class="n">22.4K+</div><div class="l">Followers Gained</div></div>
+          <div class="chip"><div class="n">1.7Cr+</div><div class="l">Eyeballs (Digital)</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="case bmw reveal">
+      <div class="case-media"><video controls preload="metadata" poster="assets/poster-seo.jpg"><source src="assets/bmw-seo.mp4" type="video/mp4"></video></div>
+      <div class="case-body">
+        <span class="case-tag">SEO & Organic Growth</span>
+        <h3>Winning the Search Race</h3>
+        <div class="case-row"><b>Ignition</b><span>BMW Motorrad was competing for search visibility against Harley-Davidson, Triumph, Ducati, and Kawasaki in a crowded premium motorcycle category.</span></div>
+        <div class="case-row"><b>Approach</b><span>Ran a structured on-page and off-page SEO program — technical fixes, authorised dealer directory pages, guest posts, and business/classified listings — to out-rank every competitor.</span></div>
+        <div class="case-row"><b>Execution</b><span>Tracked keyword rankings and traffic share monthly against the full competitor set to keep the program accountable to real search data.</span></div>
+        <div class="stat-chips">
+          <div class="chip"><div class="n">#1</div><div class="l">Overall SEO Leaderboard</div></div>
+          <div class="chip"><div class="n">95%</div><div class="l">Keywords Ranked Top 5</div></div>
+          <div class="chip"><div class="n">40%</div><div class="l">Category Traffic Share</div></div>
+        </div>
+        <div class="note">Traffic share vs. Triumph (28%), Harley-Davidson (26%), and Ducati (5%).</div>
+      </div>
+    </div>
+
+    <div class="case bmw reveal">
+      <div class="case-body" style="grid-column:1/-1;">
+        <span class="case-tag">Product Launch</span>
+        <h3>BMW CE 02 Launch</h3>
+        <div class="case-row"><b>My Role</b><span>Led strategy and execution of the digital launch campaign for BMW's electric motorcycle, aimed at a younger, non-traditional rider base — driving strong engagement and brand awareness without diluting BMW's core credibility.</span></div>
+        <a class="case-link" href="https://youtu.be/IyKPzuK9gAw" target="_blank">Watch the campaign ↗</a>
+      </div>
+    </div>
+
+    <div class="brand-label reveal"><div class="brand-dot" style="background:var(--fit)"></div><span>Anytime Fitness</span></div>
+
+    <div class="case fit reveal">
+      <div class="case-media"><video controls preload="metadata" poster="assets/poster-anytime.jpg"><source src="assets/anytime-fitness.mp4" type="video/mp4"></video></div>
+      <div class="case-body">
+        <span class="case-tag">Brand Campaign · PR-Amplified</span>
+        <h3>No Rahuls Were Harmed in the Making of This Ad</h3>
+        <div class="case-row"><b>Ignition</b><span>One of fitness's most common — and funniest — behaviours: someone impulsively buying a gym membership for a friend who never asked for it.</span></div>
+        <div class="case-row"><b>Approach</b><span>Built a witty, relatable campaign around that exact insight, giving it a meme-able name that made it easy to share and talk about.</span></div>
+        <div class="case-row"><b>Execution</b><span>The campaign was picked up organically by marketing trade press, including Adgully, extending reach well beyond paid media.</span></div>
+        <div class="stat-chips">
+          <div class="chip"><div class="n">+47%</div><div class="l">Inbound Leads</div></div>
+          <div class="chip"><div class="n">256K+</div><div class="l">Total Content Interaction</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="case fit reveal">
+      <div class="case-body" style="grid-column:1/-1;">
+        <span class="case-tag">Brand Campaign</span>
+        <h3>"Let It Burn"</h3>
+        <div class="case-row"><b>My Role</b><span>Directed a high-engagement fitness campaign combining original content, influencer collaborations, and paid amplification under one motivational idea.</span></div>
+        <a class="case-link" href="https://youtu.be/CtXbOw_SMfw" target="_blank">Watch the campaign ↗</a>
+      </div>
+    </div>
+
+    <div class="brand-label reveal"><div class="brand-dot" style="background:var(--canon)"></div><span>Canon</span></div>
+
+    <div class="case canon reveal">
+      <div class="case-body" style="grid-column:1/-1;">
+        <span class="case-tag">Channel Growth · New Page</span>
+        <h3>Canon New Page Launch</h3>
+        <div class="case-row"><b>My Role</b><span>Owned the launch and 90-day growth strategy for a brand-new Canon social page, prioritizing community-building content over pure product promotion to build sustained follower and engagement growth from zero.</span></div>
+        <a class="case-link" href="https://youtu.be/2Go8iCfGTdc" target="_blank">Watch the campaign ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="growth" class="alt">
+  <div class="wrap">
+    <div class="section-head reveal"><span class="section-tag">02</span><span class="section-title">The Growth Reel</span></div>
+    <p class="section-desc reveal">The body of work that helped BMW Motorrad's channel win MOMMY's Best Automobile Brand — a mix of always-on culture campaigns layered under the flagship case studies above.</p>
+    <div class="growth-wrap reveal">
+      <div class="growth-video"><video controls preload="metadata" poster="assets/poster-best-brand.jpg"><source src="assets/bmw-best-brand.mp4" type="video/mp4"></video></div>
+      <div class="growth-content">
+        <h3>Best Digital Brand — Automobile</h3>
+        <p style="color:var(--muted);font-size:14.5px;">A reel of the always-on campaigns run alongside the flagship case studies — from Spotify-style "Exhaust Notes" to community UGC features — that compounded into channel-wide growth.</p>
+        <div class="mini-stats">
+          <div class="mini-stat"><div class="n">20.1M+</div><div class="l">People Reached (Channel)</div></div>
+          <div class="mini-stat"><div class="n">70,070</div><div class="l">Followers Gained</div></div>
+          <div class="mini-stat"><div class="n">594K+</div><div class="l">"Exhaust Notes" Reach</div></div>
+          <div class="mini-stat"><div class="n">81K+</div><div class="l">"Exhaust Notes" Engagement</div></div>
+          <div class="mini-stat"><div class="n">474K+</div><div class="l">Rider Features Reach</div></div>
+          <div class="mini-stat"><div class="n">40</div><div class="l">Riders Featured (UGC)</div></div>
+        </div>
+        <div class="campaign-tags">
+          <span class="t">Exhaust Notes — Spotify Wrapped-style music campaign</span>
+          <span class="t">Rider Features — community UGC series</span>
+          <span class="t">Topical & festive creative moments</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="section-head reveal"><span class="section-tag">03</span><span class="section-title">Skills & Tools</span></div>
+    <div class="skill-cols reveal">
+      <div class="skill-col">
+        <h4>Strategy & Growth</h4>
+        <ul><li>Campaign Management</li><li>Strategic Planning</li><li>Client Relationship Management</li><li>Project Leadership</li></ul>
+      </div>
+      <div class="skill-col">
+        <h4>Execution</h4>
+        <ul><li>Media Planning & Development</li><li>Influencer Marketing</li><li>Email Marketing Campaigns</li><li>Website Development</li></ul>
+      </div>
+      <div class="skill-col">
+        <h4>Tools & Optimization</h4>
+        <ul><li>Search Engine Optimisation</li><li>Claude AI</li><li>ChatGPT</li><li>Notion</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience" class="alt">
+  <div class="wrap">
+    <div class="section-head reveal"><span class="section-tag">04</span><span class="section-title">Experience</span></div>
+    <div class="reveal">
+      <div class="tl-item">
+        <div class="tl-date">Jan 2023 — Present</div>
+        <div><div class="tl-role">Lead Account Manager</div><div class="tl-org">Sociowash Media Private Limited, New Delhi</div>
+        <div class="tl-desc">Leading a 7-person team across 6 brand accounts. Generated Rs. 50+ Cr in revenue through retainers, upsells, and project work. Primary client liaison for pitches, business development, and delivery.</div></div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">Sep 2021 — Dec 2022</div>
+        <div><div class="tl-role">Sr. Account Executive</div><div class="tl-org">FoxyMoron, Mumbai</div>
+        <div class="tl-desc">Managed content and campaign strategy for Revital Bars, EK by Ekta, LSG, and Schwarzkopf. Ran monthly reporting on reach and engagement across platforms and Amazon media.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="awards">
+  <div class="wrap">
+    <div class="section-head reveal"><span class="section-tag">05</span><span class="section-title">Recognition</span></div>
+    <div class="award-grid reveal">
+      <div class="award"><b>E4M Maverick</b>Best Digital Brand Marketing Strategy</div>
+      <div class="award"><b>Meta × Kyoorius</b>Best Innovative Reel</div>
+      <div class="award"><b>MOMMY</b>Best Automobile Brand</div>
+      <div class="award"><b>Silver Abby</b>Innovative Use of Digital SEO</div>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap reveal">
+    <h2>Let's talk about your next campaign.</h2>
+    <p style="color:var(--muted);max-width:480px;margin:0 auto;">Open to Account Management and Digital Marketing roles where results are measured, not assumed.</p>
+    <div class="contact-row">
+      <a href="mailto:utkarshtripathi5.we@gmail.com">utkarshtripathi5.we@gmail.com</a>
+      <a href="tel:9967318881">9967318881</a>
+      <a href="https://linkedin.com/in/utkarshtripathi25/" target="_blank">LinkedIn ↗</a>
+    </div>
+    <div class="foot-note">DELHI, 201316 — BUILT FOR DIGITAL MARKETING & ACCOUNT MANAGEMENT ROLES</div>
+  </div>
+</footer>
+
+<script>
+  const els = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:0.1});
+  els.forEach(el=>io.observe(el));
+</script>
+
+</body>
+</html>
